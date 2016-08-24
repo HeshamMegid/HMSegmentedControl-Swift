@@ -1,0 +1,45 @@
+//
+//  ViewController.swift
+//  HMSegmentedControl
+//
+//  Created by Hesham Abd-Elmegid on 8/24/16.
+//  Copyright © 2016 Tinybits. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    let segmentedControl = HMSegmentedControl(items: ["One", "Two", "Three"])
+    
+    override func viewDidLoad() {
+        view.addSubview(segmentedControl)
+        
+        segmentedControl.backgroundColor = #colorLiteral(red: 0.7683569193, green: 0.9300123453, blue: 0.9995251894, alpha: 1)
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.selectionIndicatorPosition = .Bottom
+        segmentedControl.selectionIndicatorColor = #colorLiteral(red: 0.1142767668, green: 0.3181744218, blue: 0.4912756383, alpha: 1)
+        segmentedControl.indexChangedHandler = { index in
+            print(index)
+        }
+        
+        NSLayoutConstraint.activate(
+            [segmentedControl.leftAnchor.constraint(equalTo: view.leftAnchor),
+             segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+             segmentedControl.rightAnchor.constraint(equalTo: view.rightAnchor),
+             segmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 40)]
+        )
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
