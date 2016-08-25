@@ -192,6 +192,7 @@ class HMSegmentedControl: UIControl {
     public func setSelectedSegmentIndex(index: Int, animated: Bool) {
         assert(index < items.count, "Attempting to set index to a segment that does not exist.")
         
+        selectedSegmentIndex = index
         let segmentWidth = stackView.frame.size.width / CGFloat(items.count)
         selectionIndicatorLeadingConstraint?.constant = segmentWidth * CGFloat(index)
         

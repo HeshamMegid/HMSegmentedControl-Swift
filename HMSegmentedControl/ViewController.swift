@@ -18,10 +18,14 @@ class ViewController: UIViewController {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.selectionIndicatorPosition = .Bottom
         segmentedControl.selectionIndicatorColor = #colorLiteral(red: 0.1142767668, green: 0.3181744218, blue: 0.4912756383, alpha: 1)
-        segmentedControl.titleTextAttributes = [NSForegroundColorAttributeName : #colorLiteral(red: 0.2818343937, green: 0.5693024397, blue: 0.1281824261, alpha: 1)]
+        segmentedControl.titleTextAttributes = [
+            NSForegroundColorAttributeName : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
+            NSFontAttributeName : UIFont.systemFont(ofSize: 17)
+        ]
+        
         segmentedControl.selectedTitleTextAttributes = [
             NSForegroundColorAttributeName : #colorLiteral(red: 0.05439098924, green: 0.1344551742, blue: 0.1884709597, alpha: 1),
-            NSFontAttributeName : UIFont.boldSystemFont(ofSize: 20)
+            NSFontAttributeName : UIFont.boldSystemFont(ofSize: 17)
         ]
         segmentedControl.indexChangedHandler = { index in
             print(index)
