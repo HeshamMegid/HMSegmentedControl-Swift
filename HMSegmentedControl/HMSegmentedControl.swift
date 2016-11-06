@@ -14,11 +14,18 @@ import UIKit
 //  * Set proper access control for propeties and functions
 //  * Add scroll view
 //  * Ability to add and remove items after initialization
+//  * Add delegate callback to configure each button for a state (method should have index, state and button)
+//  * Move selection indicator to its own private class with all of its properties
 
 class HMSegmentedControl: UIControl {
     enum SelectionIndicatorPosition {
         case top
         case bottom
+    }
+    
+    enum SelectionIndicatorWidthStyle {
+        case dynamic // Selection indicator is equal to the segment's label width.
+        case fixed // Selection indicator is equal to the full width of the segment.
     }
     
     var stackView: UIStackView = {
@@ -38,10 +45,13 @@ class HMSegmentedControl: UIControl {
     }()
     
     var selectionIndicatorLeadingConstraint: NSLayoutConstraint?
+    var selectionIndicatorWidthConstraint: NSLayoutConstraint?
     var items: [String]
     
     /// Height of the selection indicator stripe.
     var selectionIndicatorHeight: CGFloat = 5.0
+    
+    var selectionIndicatorWidthStyle: SelectionIndicatorWidthStyle = .fixed
     
     /// Position of the selection indicator stripe.
     var selectionIndicatorPosition: SelectionIndicatorPosition = .bottom
@@ -57,7 +67,7 @@ class HMSegmentedControl: UIControl {
     var titleTextAttributes: [String:AnyObject]? {
         didSet {
             if let titleTextAttributes = titleTextAttributes {
-                setTitleAttributes(titleTextAttributes, forControlState: .normal)
+                set(titleAttributes: titleTextAttributes, forControlState: .normal)
             }
         }
     }
@@ -66,7 +76,7 @@ class HMSegmentedControl: UIControl {
     var selectedTitleTextAttributes: [String:AnyObject]? {
         didSet {
             if let selectedTitleTextAttributes = selectedTitleTextAttributes {
-                setTitleAttributes(selectedTitleTextAttributes, forControlState: .selected)
+                set(titleAttributes: selectedTitleTextAttributes, forControlState: .selected)
             }
         }
     }
@@ -105,7 +115,6 @@ class HMSegmentedControl: UIControl {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
         
-        selectionIndicatorLeadingConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: stackView.leadingAnchor)
         
         let selectionIndicatorPositionConstraint: NSLayoutConstraint
         
@@ -115,8 +124,20 @@ class HMSegmentedControl: UIControl {
             selectionIndicatorPositionConstraint = selectionIndicator.bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
         }
         
+        if selectionIndicatorWidthStyle == .dynamic {
+            let button = stackView.arrangedSubviews[selectedSegmentIndex] as? UIButton
+            
+            if let titleLabel = button?.titleLabel {
+                selectionIndicatorLeadingConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor)
+                selectionIndicatorWidthConstraint = selectionIndicator.widthAnchor.constraint(equalTo: titleLabel.widthAnchor)
+            }
+        } else {
+            selectionIndicatorLeadingConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: stackView.leadingAnchor)
+            selectionIndicatorWidthConstraint = selectionIndicator.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0 / CGFloat(items.count))
+        }
+        
         NSLayoutConstraint.activate([
-            selectionIndicator.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1.0 / CGFloat(items.count), constant: 0),
+            selectionIndicatorWidthConstraint!,
             selectionIndicator.heightAnchor.constraint(equalToConstant: selectionIndicatorHeight),
             selectionIndicatorPositionConstraint,
             selectionIndicatorLeadingConstraint!
@@ -130,20 +151,20 @@ class HMSegmentedControl: UIControl {
         addSubview(selectionIndicator)
         bringSubview(toFront: selectionIndicator)
         
-        addButtonsForItems(items)
+        addButtons(forItems: items)
     }
     
-    func addButtonsForItems(_ items: [String]) {
+    func addButtons(forItems items: [String]) {
         for (index, item) in items.enumerated() {
-            let button = buttonForItem(item, atIndex: index)
-            stackView.addArrangedSubview(button)
+            let buttonView = button(forItem: item, atIndex: index)
+            stackView.addArrangedSubview(buttonView)
         }
     }
     
-    func buttonForItem(_ item: String, atIndex index: Int) -> UIButton {
+    func button(forItem item: String, atIndex index: Int) -> UIButton {
         let button = UIButton()
         button.setTitle(item, for: .normal)
-        button.addTarget(self, action: #selector(HMSegmentedControl.tappedSegmentButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(HMSegmentedControl.tapped(segmentButton:)), for: .touchUpInside)
         // TODO: Set button title text attributes to a dictionary property set by the developer
         
         if let titleTextAttributes = titleTextAttributes {
@@ -162,7 +183,7 @@ class HMSegmentedControl: UIControl {
         return button
     }
     
-    func tappedSegmentButton(_ sender: UIButton) {
+    func tapped(segmentButton sender: UIButton) {
         let newIndex = sender.tag
         let indexChanged: Bool = newIndex != selectedSegmentIndex
         selectedSegmentIndex = newIndex
@@ -174,7 +195,7 @@ class HMSegmentedControl: UIControl {
         setSelectedSegmentIndex(newIndex, animated: true)
     }
     
-    func setTitleAttributes(_ attributes: [String:AnyObject], forControlState state: UIControlState) {
+    func set(titleAttributes attributes: [String:AnyObject], forControlState state: UIControlState) {
         for button in stackView.arrangedSubviews {
             if let button = button as? UIButton, let title = button.title(for: state) {
                 let attributedTitle = NSAttributedString(string: title, attributes: attributes)
@@ -193,9 +214,23 @@ class HMSegmentedControl: UIControl {
         assert(index < items.count, "Attempting to set index to a segment that does not exist.")
         
         selectedSegmentIndex = index
-        let segmentWidth = stackView.frame.size.width / CGFloat(items.count)
-        selectionIndicatorLeadingConstraint?.constant = segmentWidth * CGFloat(index)
         
+        if selectionIndicatorWidthStyle == .dynamic {
+            let button = stackView.arrangedSubviews[selectedSegmentIndex] as? UIButton
+            
+            if let titleLabel = button?.titleLabel {
+                removeConstraints([selectionIndicatorWidthConstraint!, selectionIndicatorLeadingConstraint!])
+                
+                selectionIndicatorLeadingConstraint = selectionIndicator.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor)
+                selectionIndicatorWidthConstraint = selectionIndicator.widthAnchor.constraint(equalTo: titleLabel.widthAnchor)
+                
+                NSLayoutConstraint.activate([selectionIndicatorWidthConstraint!, selectionIndicatorLeadingConstraint!])
+            }
+        } else {
+            let segmentWidth = stackView.frame.size.width / CGFloat(items.count)
+            selectionIndicatorLeadingConstraint?.constant = segmentWidth * CGFloat(index)
+        }
+    
         if animated {
             UIView.animate(withDuration: 0.25, animations: {
                 self.layoutIfNeeded()
