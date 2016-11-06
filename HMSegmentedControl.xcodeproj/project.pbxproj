@@ -8,26 +8,65 @@
 
 /* Begin PBXBuildFile section */
 		5437C93F1D6D885D00F0A2F7 /* HMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5437C93E1D6D885D00F0A2F7 /* HMSegmentedControl.swift */; };
-		54974D4F1D6D06240065A547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54974D4E1D6D06240065A547 /* AppDelegate.swift */; };
-		54974D511D6D06240065A547 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54974D501D6D06240065A547 /* ViewController.swift */; };
-		54974D541D6D06240065A547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54974D521D6D06240065A547 /* Main.storyboard */; };
-		54974D561D6D06240065A547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54974D551D6D06240065A547 /* Assets.xcassets */; };
-		54974D591D6D06240065A547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54974D571D6D06240065A547 /* LaunchScreen.storyboard */; };
+		549B5BCA1DCF41FD009F91E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549B5BC21DCF41FD009F91E5 /* AppDelegate.swift */; };
+		549B5BCB1DCF41FD009F91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC31DCF41FD009F91E5 /* Assets.xcassets */; };
+		549B5BCC1DCF41FD009F91E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC41DCF41FD009F91E5 /* LaunchScreen.storyboard */; };
+		549B5BCD1DCF41FD009F91E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC61DCF41FD009F91E5 /* Main.storyboard */; };
+		549B5BCE1DCF41FD009F91E5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC81DCF41FD009F91E5 /* Info.plist */; };
+		549B5BCF1DCF41FD009F91E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549B5BC91DCF41FD009F91E5 /* ViewController.swift */; };
+		549B5BD91DCF426F009F91E5 /* HMSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 549B5BD71DCF426F009F91E5 /* HMSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		549B5BDC1DCF426F009F91E5 /* HMSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549B5BD51DCF426F009F91E5 /* HMSegmentedControl.framework */; };
+		549B5BDD1DCF426F009F91E5 /* HMSegmentedControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 549B5BD51DCF426F009F91E5 /* HMSegmentedControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		549B5BDA1DCF426F009F91E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54974D431D6D06240065A547 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 549B5BD41DCF426F009F91E5;
+			remoteInfo = HMSegmentedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		549B5BE11DCF426F009F91E5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				549B5BDD1DCF426F009F91E5 /* HMSegmentedControl.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5437C93E1D6D885D00F0A2F7 /* HMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSegmentedControl.swift; sourceTree = "<group>"; };
-		54974D4B1D6D06240065A547 /* HMSegmentedControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMSegmentedControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		54974D4E1D6D06240065A547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54974D501D6D06240065A547 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		54974D531D6D06240065A547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		54974D551D6D06240065A547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		54974D581D6D06240065A547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		54974D5A1D6D06240065A547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54974D4B1D6D06240065A547 /* HMSegmentedControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMSegmentedControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		549B5BC21DCF41FD009F91E5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		549B5BC31DCF41FD009F91E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		549B5BC51DCF41FD009F91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		549B5BC71DCF41FD009F91E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		549B5BC81DCF41FD009F91E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549B5BC91DCF41FD009F91E5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		549B5BD51DCF426F009F91E5 /* HMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		549B5BD71DCF426F009F91E5 /* HMSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		549B5BD81DCF426F009F91E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		54974D481D6D06240065A547 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549B5BDC1DCF426F009F91E5 /* HMSegmentedControl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549B5BD11DCF426F009F91E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,7 +79,8 @@
 		54974D421D6D06240065A547 = {
 			isa = PBXGroup;
 			children = (
-				54974D4D1D6D06240065A547 /* HMSegmentedControl */,
+				549B5BC11DCF41FD009F91E5 /* HMSegmentedControlExample */,
+				549B5BD61DCF426F009F91E5 /* HMSegmentedControl */,
 				54974D4C1D6D06240065A547 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,35 +88,76 @@
 		54974D4C1D6D06240065A547 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54974D4B1D6D06240065A547 /* HMSegmentedControl.app */,
+				54974D4B1D6D06240065A547 /* HMSegmentedControlExample.app */,
+				549B5BD51DCF426F009F91E5 /* HMSegmentedControl.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		54974D4D1D6D06240065A547 /* HMSegmentedControl */ = {
+		549B5BC11DCF41FD009F91E5 /* HMSegmentedControlExample */ = {
 			isa = PBXGroup;
 			children = (
-				54974D4E1D6D06240065A547 /* AppDelegate.swift */,
-				54974D501D6D06240065A547 /* ViewController.swift */,
+				549B5BC21DCF41FD009F91E5 /* AppDelegate.swift */,
+				549B5BC31DCF41FD009F91E5 /* Assets.xcassets */,
+				549B5BC41DCF41FD009F91E5 /* LaunchScreen.storyboard */,
+				549B5BC61DCF41FD009F91E5 /* Main.storyboard */,
+				549B5BC81DCF41FD009F91E5 /* Info.plist */,
+				549B5BC91DCF41FD009F91E5 /* ViewController.swift */,
+			);
+			path = HMSegmentedControlExample;
+			sourceTree = "<group>";
+		};
+		549B5BD61DCF426F009F91E5 /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
 				5437C93E1D6D885D00F0A2F7 /* HMSegmentedControl.swift */,
-				54974D521D6D06240065A547 /* Main.storyboard */,
-				54974D551D6D06240065A547 /* Assets.xcassets */,
-				54974D571D6D06240065A547 /* LaunchScreen.storyboard */,
-				54974D5A1D6D06240065A547 /* Info.plist */,
+				549B5BD71DCF426F009F91E5 /* HMSegmentedControl.h */,
+				549B5BD81DCF426F009F91E5 /* Info.plist */,
 			);
 			path = HMSegmentedControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		549B5BD21DCF426F009F91E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549B5BD91DCF426F009F91E5 /* HMSegmentedControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		54974D4A1D6D06240065A547 /* HMSegmentedControl */ = {
+		54974D4A1D6D06240065A547 /* HMSegmentedControlExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54974D5D1D6D06240065A547 /* Build configuration list for PBXNativeTarget "HMSegmentedControl" */;
+			buildConfigurationList = 54974D5D1D6D06240065A547 /* Build configuration list for PBXNativeTarget "HMSegmentedControlExample" */;
 			buildPhases = (
 				54974D471D6D06240065A547 /* Sources */,
 				54974D481D6D06240065A547 /* Frameworks */,
 				54974D491D6D06240065A547 /* Resources */,
+				549B5BE11DCF426F009F91E5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				549B5BDB1DCF426F009F91E5 /* PBXTargetDependency */,
+			);
+			name = HMSegmentedControlExample;
+			productName = HMSegmentedControl;
+			productReference = 54974D4B1D6D06240065A547 /* HMSegmentedControlExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		549B5BD41DCF426F009F91E5 /* HMSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 549B5BDE1DCF426F009F91E5 /* Build configuration list for PBXNativeTarget "HMSegmentedControl" */;
+			buildPhases = (
+				549B5BD01DCF426F009F91E5 /* Sources */,
+				549B5BD11DCF426F009F91E5 /* Frameworks */,
+				549B5BD21DCF426F009F91E5 /* Headers */,
+				549B5BD31DCF426F009F91E5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,8 +165,8 @@
 			);
 			name = HMSegmentedControl;
 			productName = HMSegmentedControl;
-			productReference = 54974D4B1D6D06240065A547 /* HMSegmentedControl.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 549B5BD51DCF426F009F91E5 /* HMSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,7 +180,12 @@
 				TargetAttributes = {
 					54974D4A1D6D06240065A547 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
+					};
+					549B5BD41DCF426F009F91E5 = {
+						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -116,7 +202,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54974D4A1D6D06240065A547 /* HMSegmentedControl */,
+				54974D4A1D6D06240065A547 /* HMSegmentedControlExample */,
+				549B5BD41DCF426F009F91E5 /* HMSegmentedControl */,
 			);
 		};
 /* End PBXProject section */
@@ -126,9 +213,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54974D591D6D06240065A547 /* LaunchScreen.storyboard in Resources */,
-				54974D561D6D06240065A547 /* Assets.xcassets in Resources */,
-				54974D541D6D06240065A547 /* Main.storyboard in Resources */,
+				549B5BCB1DCF41FD009F91E5 /* Assets.xcassets in Resources */,
+				549B5BCD1DCF41FD009F91E5 /* Main.storyboard in Resources */,
+				549B5BCC1DCF41FD009F91E5 /* LaunchScreen.storyboard in Resources */,
+				549B5BCE1DCF41FD009F91E5 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549B5BD31DCF426F009F91E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,29 +234,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54974D511D6D06240065A547 /* ViewController.swift in Sources */,
-				54974D4F1D6D06240065A547 /* AppDelegate.swift in Sources */,
+				549B5BCF1DCF41FD009F91E5 /* ViewController.swift in Sources */,
+				549B5BCA1DCF41FD009F91E5 /* AppDelegate.swift in Sources */,
 				5437C93F1D6D885D00F0A2F7 /* HMSegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		549B5BD01DCF426F009F91E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		54974D521D6D06240065A547 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54974D531D6D06240065A547 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		549B5BDB1DCF426F009F91E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 549B5BD41DCF426F009F91E5 /* HMSegmentedControl */;
+			targetProxy = 549B5BDA1DCF426F009F91E5 /* PBXContainerItemProxy */;
 		};
-		54974D571D6D06240065A547 /* LaunchScreen.storyboard */ = {
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		549B5BC41DCF41FD009F91E5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				54974D581D6D06240065A547 /* Base */,
+				549B5BC51DCF41FD009F91E5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		549B5BC61DCF41FD009F91E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				549B5BC71DCF41FD009F91E5 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,7 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = HMSegmentedControl/Info.plist;
+				INFOPLIST_FILE = HMSegmentedControlExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.tinybits.HMSegmentedControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,12 +382,62 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				INFOPLIST_FILE = HMSegmentedControl/Info.plist;
+				INFOPLIST_FILE = HMSegmentedControlExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.tinybits.HMSegmentedControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		549B5BDF1DCF426F009F91E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HMSegmentedControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heshammegid.HMSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		549B5BE01DCF426F009F91E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HMSegmentedControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heshammegid.HMSegmentedControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -293,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54974D5D1D6D06240065A547 /* Build configuration list for PBXNativeTarget "HMSegmentedControl" */ = {
+		54974D5D1D6D06240065A547 /* Build configuration list for PBXNativeTarget "HMSegmentedControlExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54974D5E1D6D06240065A547 /* Debug */,
@@ -301,6 +461,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		549B5BDE1DCF426F009F91E5 /* Build configuration list for PBXNativeTarget "HMSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				549B5BDF1DCF426F009F91E5 /* Debug */,
+				549B5BE01DCF426F009F91E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
