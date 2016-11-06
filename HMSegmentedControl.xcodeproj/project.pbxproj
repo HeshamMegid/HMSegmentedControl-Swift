@@ -12,7 +12,6 @@
 		549B5BCB1DCF41FD009F91E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC31DCF41FD009F91E5 /* Assets.xcassets */; };
 		549B5BCC1DCF41FD009F91E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC41DCF41FD009F91E5 /* LaunchScreen.storyboard */; };
 		549B5BCD1DCF41FD009F91E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC61DCF41FD009F91E5 /* Main.storyboard */; };
-		549B5BCE1DCF41FD009F91E5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 549B5BC81DCF41FD009F91E5 /* Info.plist */; };
 		549B5BCF1DCF41FD009F91E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549B5BC91DCF41FD009F91E5 /* ViewController.swift */; };
 		549B5BD91DCF426F009F91E5 /* HMSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 549B5BD71DCF426F009F91E5 /* HMSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549B5BDC1DCF426F009F91E5 /* HMSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549B5BD51DCF426F009F91E5 /* HMSegmentedControl.framework */; };
@@ -216,7 +215,6 @@
 				549B5BCB1DCF41FD009F91E5 /* Assets.xcassets in Resources */,
 				549B5BCD1DCF41FD009F91E5 /* Main.storyboard in Resources */,
 				549B5BCC1DCF41FD009F91E5 /* LaunchScreen.storyboard in Resources */,
-				549B5BCE1DCF41FD009F91E5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
